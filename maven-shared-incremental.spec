@@ -4,14 +4,14 @@
 
 Name:           %{?scl_prefix}%{pkg_name}
 Version:        1.1
-Release:        6.11%{?dist}
+Release:        6.12%{?dist}
 Summary:        Maven Incremental Build support utilities
 License:        ASL 2.0
 URL:            http://maven.apache.org/shared/maven-shared-incremental/
 Source0:        http://repo1.maven.org/maven2/org/apache/maven/shared/%{pkg_name}/%{version}/%{pkg_name}-%{version}-source-release.zip
 BuildArch:      noarch
 
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix}maven-local
 
 BuildRequires:  %{?scl_prefix}mvn(org.apache.maven.shared:maven-shared-components:pom:)
 BuildRequires:  %{?scl_prefix}mvn(org.apache.maven.shared:maven-shared-utils)
@@ -54,6 +54,9 @@ set -e -x
 %doc LICENSE NOTICE
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1.1-6.12
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.1-6.11
 - maven33 rebuild #2
 
